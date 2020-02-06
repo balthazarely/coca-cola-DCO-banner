@@ -1,30 +1,4 @@
-///// Global Variables /////
-let userInputMade = false;
-let nameArray = [
-	"Adam",
-	"Lisa",
-	"Paige",
-	"Morgan",
-	"Thomas",
-	"William",
-	"Susan",
-	"James",
-	"Elizabeth",
-	"Annie",
-	"Paul"
-];
-
-///// Begining Timeline /////
-
-var shimmer = new TimelineMax({ repeat: -1 });
-shimmer.to("#line", 5, {
-	delay: 0.5
-});
-shimmer.to("#line", 1, {
-	x: 150,
-	delay: 0.5
-});
-
+///// Begining Main Timeline /////
 var tl = new TimelineMax({});
 
 tl.from("#logo-wrapper", 1, {
@@ -101,10 +75,11 @@ tl.from("#form", 1, {
 
 loopEndAnimation(".form-input");
 
-///// Loop at Input Timeline /////
+///// Mini Looping Timlines /////
+// Scale Pulse Timeline
 function loopEndAnimation(selector) {
 	var tl3 = new TimelineMax({ repeat: -1 });
-	tl3.from(selector, 1, {
+	tl3.from(selector, 3, {
 		scale: 1
 	});
 
@@ -115,29 +90,76 @@ function loopEndAnimation(selector) {
 	tl3.to(selector, 0.35, {
 		scale: 1
 	});
-
-	tl3.from(selector, 1, {
-		scale: 1
-	});
 }
 
-///// Functions & Pt II of timeline /////
+// Shimmer Timeline
+var shimmer = new TimelineMax({ repeat: -1 });
+shimmer.to("#line", 5, {
+	delay: 0.5
+});
+shimmer.to("#line", 1, {
+	x: 150,
+	delay: 0.5
+});
 
+///// Functions & Pt II of timeline /////
 setTimeout(function() {
 	console.log("18000 hit");
 	if (userInputMade === true) {
 		console.log("user has made the section");
+		// does nothing in this case
 	} else if (userInputMade === false) {
 		console.log("automatic name created");
-		getNameWithoutUser(nameArray[Math.floor(Math.random() * 10)]);
+		typeWriter();
+		setTimeout(function() {
+			getNameWithoutUser(txt);
+		}, 600);
 	}
-}, 18000);
+}, 13000);
 
+///// Global Variables /////
+let userInputMade = false;
+let nameArray = [
+	"Adam",
+	"Lisa",
+	"Paige",
+	"Morgan",
+	"Thomas",
+	"William",
+	"Susan",
+	"James",
+	"Elizabeth",
+	"Annie",
+	"Paul"
+];
+var i = 0;
+var speed = 70; /* The speed/duration of the effect in milliseconds */
+let txt = nameArray[Math.floor(Math.random() * 10)];
+
+//Typewriter function
+function typeWriter() {
+	if (i < txt.length) {
+		document.getElementById("typewriter").innerHTML += txt.charAt(i);
+		i++;
+		setTimeout(typeWriter, speed);
+	}
+}
+
+// Submits form on "enter" press
+const input = document.getElementById("name-goes-here");
+input.addEventListener("keyup", function(event) {
+	if (event.keyCode === 13) {
+		event.preventDefault();
+		document.getElementById("input-btn").click();
+	}
+});
+
+// Sequence for if user doesn't enter name
 function getNameWithoutUser(name) {
 	document.getElementById("apended-name").innerText = name;
 	secondPartAnimation();
 }
-
+// Sequence for if user enters name
 function getName() {
 	let username = document.getElementById("name-goes-here").value;
 	userInputMade = true;
@@ -146,25 +168,27 @@ function getName() {
 	secondPartAnimation();
 }
 
+// Final animation sequence
 function secondPartAnimation() {
 	var tl2 = new TimelineMax({});
 
 	tl2.to("#form", 1, {
 		scale: 0,
 		y: -60,
+		delay: 0.3,
 		ease: Back.easeIn.config(1.7)
 	});
 
 	tl.to("#coke-bottle-wrapper-2", 2.3, {
 		scale: 1,
-		ease: "back.out(2)",
+		ease: "back.out(1.7)",
 		transformOrigin: "bottom",
 		delay: -0.25
 	});
 
 	tl.to("#coke-bottle-wrapper-2", 1, {
 		scale: 0.53,
-		y: -138,
+		y: -142,
 		x: -75,
 		ease: Power3.easeOut
 	});
