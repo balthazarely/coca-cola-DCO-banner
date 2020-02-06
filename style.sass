@@ -1,0 +1,263 @@
+//Variables
+$banner-width: 300px
+$banner-height: 250px
+$font-family: 'Open Sans', sans-serif
+
+body
+    margin: 0
+    padding: 0
+    font-family: $font-family
+    -webkit-font-smoothing: antialiased
+
+#blackborder 
+    position: absolute
+    width: $banner-width - 2px
+    height: $banner-height - 2px
+    border: 2px solid black
+    z-index: 10
+
+#main-container
+    overflow: hidden
+    position: absolute
+    width: $banner-width
+    height: $banner-height
+    top: 0
+    left: 0
+    display: flex
+    justify-content: center
+    align-items: center
+    background: rgb(215,37,55)
+    background: radial-gradient(circle, rgba(215,37,55,1) 23%, rgba(185,32,47,1) 91%)
+
+
+#logo-wrapper
+    position: absolute
+    width: 65px
+    height: 65px
+    top: 20px
+    right: 20px
+    z-index: 20
+    img 
+        width: 100%
+        height: 100%
+    
+#logo-wrapper-shimmer
+    position: absolute
+    width: 65px
+    height: 65px
+    top: 20px
+    right: 20px
+    z-index: 25
+    border-radius: 100px
+    clip-path: circle(50% at 50% 50%)
+
+#line 
+    position: absolute
+    top: -100px
+    height: 200px
+    width: 3px
+    background: white
+    transform: rotate(45deg)
+
+
+#coke-bottle-wrapper
+    position: absolute
+    top: 7px
+    left: 10.59px
+    z-index: 20
+    width: 124.5px
+    height: 240px
+    img 
+        width: 100%
+        height: 100%
+
+.text-wrapper
+    position: absolute
+    top: 70px
+    left: 60px
+    clip-path: inset(0 0 0 0 round 0)
+    width: 250px
+    height: 150px
+
+#text
+    position: absolute
+    z-index: 100
+    left: -110px
+    color: white
+    font-size: 28px
+    letter-spacing: 0.5px
+    font-weight: 700
+     
+#text-2, #text-3, #text-4
+    position: absolute
+    z-index: 100
+    left: -150px
+    color: white
+    font-size: 21px
+    letter-spacing: 0.5px
+    font-weight: 700
+
+#text-2
+    top: 20px    
+
+#text-3
+    top: 45px    
+
+#text-4
+    top: 70px    
+
+#bottle-text-wrapper
+    position: absolute
+    top: 107px
+    width: 63px
+    left: 29px
+    z-index: 50
+    display: flex
+    justify-content: center
+    align-items: center
+
+.bottle-text
+    position: absolute
+    font-family: 'Lobster', cursive
+    font-size: 16px
+    color: white
+
+#logo-simple
+    position: absolute
+    top: 60px
+    left: -120px
+    width: 120px
+    img
+        width: 100%
+        height: 100%
+
+#form 
+    position: absolute
+    top: 100px
+    z-index: 60
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+
+.form-input
+    color: #C21F2F
+    border: 1px solid black
+    font-size: 2rem
+    font-weight: 800
+    padding: 10px 8px
+    margin: 4px 0
+    width: 220px
+    text-align: center
+    background-color: rgb(255, 255, 255)
+    -webkit-box-shadow: 0px 5px 14px -1px rgba(0,0,0,0.85);
+    -moz-box-shadow: 0px 5px 14px -1px rgba(0,0,0,0.85)
+    box-shadow: 0px 5px 14px -1px rgba(0,0,0,0.85)
+
+#input-btn 
+    // display: inline-block
+    padding: 10px 8px
+    margin: 0
+    text-decoration: none
+    background: rgba(0,0,0,0)
+    color: #ffffff
+    font-family: sans-serif
+    font-size: 1.5rem
+    font-weight: 700
+    cursor: pointer
+    text-align: center
+    transition: all 0.3s
+    border: none
+
+#input-btn:hover
+    transform: scale(1.1)
+    border: none
+    text-decoration: none
+    outline: none
+    border: 0
+
+
+#input-btn:active
+    transform: scale(1.2)
+    border: none
+    text-decoration: none
+    outline: none
+    border: 0
+
+#cta-wrapper
+    position: absolute
+    top: 195px
+    left: 131px
+    width: 142px
+    height: 32px
+    background: white
+    border-radius: 17px
+    display: flex
+    justify-content: center
+    align-items: center
+    transform: scale(0)
+    color: #C21F2F
+    z-index: 60
+
+#cta-text
+    font-size: 16px
+    letter-spacing: .5px
+    font-weight: 800
+
+#test
+    height: $banner-height
+    width: 129px
+    position: absolute
+    left: 0px
+
+#coke-bottle-wrapper-2
+    position: absolute
+    top: -70px
+    // left: 10.59px
+    // z-index: 20
+    // width: 124.5px
+    // height: 240px
+    display: flex
+    justify-content: center
+    align-items: center
+    transform: scale(0)
+    img 
+        width: 120%
+        height: 120%
+    
+#apended-name-wrapper
+    position: absolute
+    top: 165px
+    height: 70px
+    width: 150px
+    z-index: 50
+    display: flex
+    justify-content: center
+    align-items: center
+    font-family: 'Lobster', cursive
+    font-size: 26px
+    color: white
+
+#final-text 
+    // padding: 10px 8px
+    // margin: 0
+    // text-decoration: none
+    // background: rgba(0,0,0,0)
+    color: #ffffff
+    font-family: sans-serif
+    font-size: 1.5rem
+    font-weight: 700
+    // cursor: pointer
+    text-align: center
+    transition: all 0.3s
+    border: none
+    position: absolute
+    top: 190px
+    transform: scale(0)
+
+
+#cta-wrapper:hover
+    color: white
+    background: #8F1824
+    cursor: pointer
+

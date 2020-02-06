@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Document</title>
+		<link rel="stylesheet" href="style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Lobster&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="container">
+			<div id="blackborder"></div>
+			<div id="main-container">
+				<div id="test"></div>
+				<div id="logo-wrapper-shimmer">
+					<div id="line"></div>
+				</div>
+				<div id="logo-wrapper">
+					<img src="coke-logo.png" alt="coke-logo" />
+				</div>
+				<div class="text-wrapper">
+					<h1 id="text">Share a</h1>
+					<div id="logo-simple">
+						<img src="coke-logo-name.png" alt="coke-bottle" />
+					</div>
+				</div>
+				<div class="text-wrapper">
+					<h1 id="text-2" class="stagger-1">Personalise</h1>
+					<h1 id="text-3" class="stagger-1">your very</h1>
+					<h1 id="text-4" class="stagger-1">own bottle</h1>
+				</div>
+				<div id="coke-bottle-wrapper">
+					<div id="bottle-text-wrapper">
+						<div id="text-start" class="bottle-text">Friends</div>
+						<div id="text-end" class="bottle-text">Lily</div>
+					</div>
+					<img src="coke-bottle.png" id="coke-bottle" alt="coke-bottle" />
+				</div>
+
+				<div id="coke-bottle-wrapper-2">
+					<div id="apended-name-wrapper">
+						<div id="apended-name">Benathin</div>
+					</div>
+					<img src="coke-bottle.png" id="coke-bottle-2" alt="coke-bottle" />
+				</div>
+
+				<div id="form">
+					<input
+						type="text"
+						name="enter"
+						class="form-input"
+						value=""
+						id="name-goes-here"
+					/>
+					<input
+						type="button"
+						id="input-btn"
+						value="You Name It"
+						OnClick="getName()"
+					/>
+				</div>
+
+				<div id="cta-wrapper">
+					<div id="cta-text">GET STARTED</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.1.1/gsap.min.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
