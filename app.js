@@ -109,6 +109,8 @@ setTimeout(function() {
 		console.log("user has made the section");
 		// does nothing in this case
 	} else if (userInputMade === false) {
+		document.getElementById("name-goes-here").value = "";
+		document.getElementById("name-goes-here").readOnly = true;
 		console.log("automatic name created");
 		typeWriter();
 		setTimeout(function() {
@@ -133,8 +135,10 @@ let nameArray = [
 	"Paul"
 ];
 var i = 0;
-var speed = 70; /* The speed/duration of the effect in milliseconds */
+var speed = 85; /* The speed/duration of the effect in milliseconds */
 let txt = nameArray[Math.floor(Math.random() * 10)];
+let isBtnPressed = false;
+let isInputClicked = false;
 
 //Typewriter function
 function typeWriter() {
@@ -148,7 +152,8 @@ function typeWriter() {
 // Submits form on "enter" press
 const input = document.getElementById("name-goes-here");
 input.addEventListener("keyup", function(event) {
-	if (event.keyCode === 13) {
+	if (event.keyCode === 13 && isBtnPressed === false) {
+		isBtnPressed = true;
 		event.preventDefault();
 		document.getElementById("input-btn").click();
 	}
@@ -161,11 +166,14 @@ function getNameWithoutUser(name) {
 }
 // Sequence for if user enters name
 function getName() {
-	let username = document.getElementById("name-goes-here").value;
-	userInputMade = true;
-	document.getElementById("apended-name").innerText = username;
-	console.log(username);
-	secondPartAnimation();
+	if (isInputClicked === false) {
+		let username = document.getElementById("name-goes-here").value;
+		userInputMade = true;
+		isInputClicked = true;
+		document.getElementById("apended-name").innerText = username;
+		console.log(username);
+		secondPartAnimation();
+	}
 }
 
 // Final animation sequence
